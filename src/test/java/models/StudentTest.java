@@ -2,14 +2,13 @@ package models;
 
 import org.junit.jupiter.api.Test;
 
-import java.awt.print.Book;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StudentTest {
 
-    Student student1 = new Student("Anders", 2000, 01, 01);
-    Student student2 = new Student("Bengt", 2007, 01, 01);
+    Education e1 = new Education("Java Enterprise Utvecklare", 400, 2);
+    Student student1 = new Student("Anders", 2000, 01, 01, e1);
+    Student student2 = new Student("Bengt", 2007, 01, 01, e1);
 
 
     // Test doMathAddition succeeds with valid input
@@ -56,8 +55,9 @@ public class StudentTest {
 
     // Test if addBookToBackPack adds a book to the list of books (students backpack)
     @Test
-    public void addBookToBackPack() {
-        Book book = new Book();
-        backpack.add(book);
+    public void addBookToBackPackTest() {
+        Book b1 = new Book("Book", "Author", 32);
+        student1.addBookToBackPack(b1);
+        assertEquals(1, student1.getBackpack().size());
     }
 }

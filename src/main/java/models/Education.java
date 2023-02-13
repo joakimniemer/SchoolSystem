@@ -12,7 +12,7 @@ public class Education {
     public Education (String programName, int programPoints, int ProgramTimeInYears){
         this.programName= programName;
         this.programPoints = programPoints;
-        this.programTimeInYears= programTimeInYears;
+        this.programTimeInYears= ProgramTimeInYears;
     }
 
     public boolean equals(Object obj){
@@ -55,6 +55,6 @@ public class Education {
 
     @Override
     public String toString(){
-        return String.format("%s %d %d", programName, programPoints, programTimeInYears);
+        return String.format("%s, %d points and last for %d years", programName, programPoints, programTimeInYears);
     }
 }

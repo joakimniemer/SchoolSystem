@@ -1,9 +1,7 @@
 package models;
 
-import java.awt.print.Book;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Student {
@@ -14,11 +12,11 @@ public class Student {
     private List<Book> backpack;
 
 
-    public Student(String name, int yearOfBirth, int monthOfBirth, int dayOfBirth) {
+    public Student(String name, int yearOfBirth, int monthOfBirth, int dayOfBirth, Education education) {
         this.name = name;
         this.dateOfBirth = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
         this.education = education;
-        this.backpack = new ArrayList<>();
+        this.backpack = new ArrayList<models.Book>();
     }
 
 
@@ -42,8 +40,7 @@ public class Student {
 
 
     // Method for adding books to students backpack.
-    public void addBookToBackPack() {
-        Book book = new Book();
+    public void addBookToBackPack(models.Book book) {
         backpack.add(book);
     }
 
@@ -58,6 +55,9 @@ public class Student {
     }
 
 
+    public List<models.Book> getBackpack(){
+        return backpack;
+    }
     @Override
     public String toString() {
         return String.format("%s is born %s and is attending education program %s.", name, dateOfBirth.toString(), education);
