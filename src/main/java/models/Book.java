@@ -14,18 +14,16 @@ public class Book {
         this.pages = pages;
     }
 
-    public  String[] giveWisdom(){
+    public String giveWisdom(){
         int numQuotes = 3;
-        String[] wisdomQuote = new String[numQuotes]; {
+        String[] wisdomQuote = new String[numQuotes];
             wisdomQuote[0] = "'To live is the rarest thing in the world. Most people exist, that is all.' – Oscar Wilde";
             wisdomQuote[1] = "'That it will never come again is what makes life so sweet.' – Emily Dickinson";
             wisdomQuote[2] = "'It is never too late to be what you might have been.' – George Eliot";
-        }
-        for(int i = 0; i < numQuotes; i ++){
-            wisdomQuote[i] = String.valueOf(ThreadLocalRandom.current().nextInt(3) + 1);
-        }
 
-        return wisdomQuote;
+        int randomNumber = ThreadLocalRandom.current().nextInt(3);
+
+        return wisdomQuote[randomNumber];
     }
 
     public String getTitle() {
