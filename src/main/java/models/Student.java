@@ -10,15 +10,15 @@ public class Student {
 
     private String name;
     private LocalDate dateOfBirth;
-//    private Program program;
-//    private List<Book> backpack;
+    private Education education;
+    private List<Book> backpack;
 
 
     public Student(String name, int yearOfBirth, int monthOfBirth, int dayOfBirth) {
         this.name = name;
         this.dateOfBirth = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
-//        this.program = program;
-//        this.backpack = new ArrayList<>();
+        this.education = education;
+        this.backpack = new ArrayList<>();
     }
 
 
@@ -43,8 +43,8 @@ public class Student {
 
     // Method for adding books to students backpack.
     public void addBookToBackPack() {
-//        Book book = new Book();
-//        backpack.add(book);
+        Book book = new Book();
+        backpack.add(book);
     }
 
 
@@ -60,6 +60,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.format("%s is born %s and is attending program .... At the moment he is reading .....", name, dateOfBirth.toString());
+        return String.format("%s is born %s and is attending education program %s.", name, dateOfBirth.toString(), education);
     }
 }
